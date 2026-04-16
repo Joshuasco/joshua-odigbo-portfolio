@@ -9,7 +9,6 @@ import {
   DrawerTrigger,
 } from "@/components/ui/drawer";
 import vtu from "@/assets/images/vtu.png";
-import vtu_db from "@/assets/images/vtu_db.png";
 import txa26 from "@/assets/images/txa26.png";
 import jcoteck from "@/assets/images/jcoteck.png";
 import skillManAuth_api from "@/assets/images/skillManAuth_api.png";
@@ -21,8 +20,8 @@ const projects = [
     title: "Jcoteck Company Website",
     description: "A full featured company website for jcoteck. Incorporate ecommerce and bloging platform with real-time inventory management, secure payments, and an admin dashboard. Built for scalability and performance.",
     image: jcoteck,
-    technologies: ["React", "FastAPI", "PostgreSQL", "Stripe", "Redis"],
-    features: ["Real-time inventory", "Payment processing", "Admin dashboard", "Analytics"],
+    technologies: ["HTML5", "CSS3", "JQuery", "Ajax", "Django", "PostgreSQL", "PayStack", "AWS"],
+    features: ["Real-time inventory", "Payment processing", "Ecommerce", "Blogging", "Admin dashboard", "Analytics"],
     role: "Lead Developer",
     liveUrl: "https://jcoteck.com.ng/",
     githubUrl: "https://github.com/joshuasco/jcoteck",
@@ -30,11 +29,10 @@ const projects = [
   },
   {
     title: "TXA26 Event Platform",
-    description:
-      "RESTful API Authentication system for  Skillman platform with real-time updates, role-based access control, and comprehensive documentation.",
+    description: "An annual event that empowers young African tech talent by fostering knowledge exchange and capacity building in Africa By connecting professionals and novices from across the continent, TechX Africa strengthens the resilience and growth of Africa's entire tech landscape",
     image: txa26,
-    technologies: ["Django", "PostgreSQL", "Docker", "AWS", "Celery"],
-    features: ["REST API", "Real-time sync", "product purchase", "Payment Integration"],
+    technologies: ["React", "TailwindCSS", "Framer Motion", "FastAPI", "FireBase", "Flutterwave"],
+    features: ["REST API", "Real-time sync", "Product Purchase", "Payment Integration"],
     role: "Lead Developer",
     liveUrl: "https://txa-26.vercel.app",
     githubUrl: "https://github.com/Joshuasco/TXA-26.git",
@@ -45,8 +43,8 @@ const projects = [
     description:
       "A full featured ecommerce platform for circuit hub. Incorporate ecommerce and bloging platform with real-time inventory management and analytics, secure payments, and an admin dashboard with logistic and tracking functionality. Built for scalability and performance.",
     image: cirkuit_hub,
-    technologies: ["FastAPI", "PostgreSQL", "JWT", "Redis", "Docker"],
-    features: ["Real-time inventory", "Analytics", "Ecommerce", "Admin dashboard"],
+    technologies: ["React", "TailwindCSS", "Supperbase", "JWT", "Redis"],
+    features: ["Real-time Inventory", "Analytics", "Ecommerce", "Blogging", "Admin Dashboard"],
     role: "Backend Developer",
     liveUrl: "https://cirkuit-hub.lovable.app",
     githubUrl: "https://github.com/joshuasco/circuit-hub",
@@ -58,14 +56,14 @@ const projects = [
       "A vitual top up platform for data, airtime and other uitility bill payments. Allows API integration for third party websites.  Integrates secure payments, and an admin dashboard",
     image: vtu,
     technologies: ["React", "TailwindCSS", "FastAPI", "Chart.js", "Firebase"],
-    features: ["Data visualization", "Custom widgets", "Export reports", "Real-time updates"],
-    role: "Frontend Lead",
+    features: ["Data visualization", "Payment Integration", "Export reports", "Real-time updates"],
+    role: "Full-Stack Developer",
     liveUrl: "https://jcoteck-vtu.vercel.app/",
     githubUrl: "https://github.com/joshuasco/jcoteck-vtu",
-    category: "Dashboard",
+    category: "VTU Platform",
   },
   {
-    title: "SkillMan Authentication API",
+    title: "SkillMan",
     description:
       "Secure, scalable authentication service supporting OAuth, 2FA, and session management with comprehensive audit logging.",
     image: skillManAuth_api,
@@ -81,10 +79,10 @@ const projects = [
     description:
       "Personal portfolio website that showcases my skills, projects, and contact details to prospective clients and employers.",
     image: portfolio,
-    technologies: ["React", "emailjs", "TailwindCSS"],
+    technologies: ["React", "emailjs", "TailwindCSS", "shadcn/ui"],
     features: ["Responsive Design", "EmailJS Integration", "Interactive UI"],
     role: "Frontend Developer",
-    liveUrl: "#",
+    liveUrl: "https://joshuasco.vercel.app",
     githubUrl: "https://github.com/joshuasco/joshua-odigbo-Portfolio",
     category: "Portfolio",
   },

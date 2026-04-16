@@ -6,7 +6,7 @@ const skillCategories = [
       { name: "React", level: 95 },
       { name: "TailwindCSS", level: 90 },
       { name: "TypeScript", level: 88 },
-      { name: "Next.js", level: 85 },
+      { name: "Next.js", level: 75 },
       { name: "JavaScript", level: 95 },
     ],
     color: "from-cyan-500 to-blue-500",
@@ -19,7 +19,7 @@ const skillCategories = [
       { name: "Django", level: 90 },
       { name: "Python", level: 93 },
       { name: "REST APIs", level: 95 },
-      { name: "Node.js", level: 80 },
+      { name: "Node.js", level: 75 },
     ],
     color: "from-green-500 to-emerald-500",
   },
@@ -55,7 +55,7 @@ const deploymentPlatforms = [
   "AWS",
   "Heroku",
   "Render",
-  "Railway",
+  "Namecheap",
 ];
 
 export const Skills = () => {
