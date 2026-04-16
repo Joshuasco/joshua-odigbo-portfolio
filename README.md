@@ -1,73 +1,67 @@
-# Welcome to your Lovable project
+# Joshua Odigbo - Professional Portfolio
 
-## Project info
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+Welcome to the repository of my personal developer portfolio! This project serves as a comprehensive showcase of my skills, professional experience, and the key projects I've built.
 
-## How can I edit this code?
+## 🚀 Overview
 
-There are several ways of editing your application.
+As a Full-Stack Developer with 5+ years of experience designing, building, and scaling modern web applications, I created this portfolio to have a central hub for my digital footprint. The UI is designed to be highly responsive, modern, and engaging.
 
-**Use Lovable**
+### ✨ Key Features
+- **Dynamic Projects Showcase**: Includes an interactive, animated UI (bottom sheet drawer) to preview live projects within embedded iframes directly on the page.
+- **Fully Responsive**: Adapts seamlessly to all screen sizes, from mobile devices to ultrawide desktop monitors (`1440px+` optimized layouts).
+- **Premium Aesthetics**: Utilizes custom CSS gradients, scroll animations, subtle glow effects, and modern web design principles.
+- **Component-Driven Architecture**: Built with scalable and reusable React components using standard frontend best practices.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+## 🛠️ Tech Stack
 
-Changes made via Lovable will be committed automatically to this repo.
+This portfolio was explicitly crafted using modern web development technologies to ensure elite performance and maintainability:
 
-**Use your preferred IDE**
+- **Core**: React 18, TypeScript, Vite
+- **Styling**: Tailwind CSS
+- **UI Components**: shadcn/ui & Radix UI Primitives
+- **Icons & Typography**: Lucide React, Google Fonts (Space Grotesk & Inter)
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## 💻 Local Development Setup
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+To run this project locally, follow these steps:
 
-Follow these steps:
+### Prerequisites
+Make sure you have [Node.js](https://nodejs.org/en) installed on your machine.
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+### Installation
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/Joshuasco/joshua-odigbo-portfolio.git
+   ```
+2. **Navigate to the project directory:**
+   ```bash
+   cd joshua-odigbo-portfolio
+   ```
+3. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+4. **Start the development server:**
+   ```bash
+   npm run dev
+   ```
+5. **View the Application:**
+   Open your browser and visit `http://localhost:5173`
 
-# Step 3: Install the necessary dependencies.
-npm i
+## 📫 Let's Connect
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+I'm always excited to work on new projects and collaborate with creative teams. Whether you have a project in mind, need technical consultation, or just want to connect — I'd love to hear from you!
 
-**Edit a file directly in GitHub**
+- **Email**: [joshua.odigbo@jcoteck.com.ng](mailto:joshua.odigbo@jcoteck.com.ng)
+- **LinkedIn**: [Joshua Odigbo](https://www.linkedin.com/in/joshua-odigbo-80251a218)
+- **GitHub**: [@joshuasco](https://github.com/joshuasco)
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+---
 
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+⭐️ Designed and Built by [Joshua Odigbo](https://github.com/joshuasco)
