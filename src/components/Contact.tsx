@@ -51,8 +51,8 @@ export const Contact = () => {
               <span className="text-gradient">Amazing</span> Together
             </h2>
             <p className="text-muted-foreground mb-8 leading-relaxed">
-              I'm always excited to work on new projects and collaborate with 
-              creative teams. Whether you have a project in mind, need technical 
+              I'm always excited to work on new projects and collaborate with
+              creative teams. Whether you have a project in mind, need technical
               consultation, or just want to connect — I'd love to hear from you.
             </p>
 
@@ -65,10 +65,10 @@ export const Contact = () => {
                 <div>
                   <p className="text-sm text-muted-foreground">Email</p>
                   <a
-                    href="mailto:joshua@example.com"
+                    href="mailto:joshua.odigbo@jcoteck.com.ng"
                     className="font-medium hover:text-primary transition-colors"
                   >
-                    joshua@example.com
+                    joshua.odigbo@jcoteck.com.ng
                   </a>
                 </div>
               </div>
@@ -95,7 +95,7 @@ export const Contact = () => {
             {/* Social Links */}
             <div className="flex gap-4">
               <a
-                href="https://github.com"
+                href="https://github.com/joshuasco"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 px-4 py-2 rounded-lg bg-secondary hover:bg-secondary/80 transition-colors"
@@ -104,7 +104,7 @@ export const Contact = () => {
                 <span className="text-sm font-medium">GitHub</span>
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/joshua-odigbo-80251a218"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 px-4 py-2 rounded-lg bg-secondary hover:bg-secondary/80 transition-colors"

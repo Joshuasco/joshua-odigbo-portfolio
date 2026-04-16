@@ -1,54 +1,92 @@
-import { ExternalLink, Github, ArrowUpRight } from "lucide-react";
+import { ExternalLink, Github, ArrowUpRight, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import {
+  Drawer,
+  DrawerClose,
+  DrawerContent,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerTrigger,
+} from "@/components/ui/drawer";
+import vtu from "@/assets/images/vtu.png";
+import vtu_db from "@/assets/images/vtu_db.png";
+import txa26 from "@/assets/images/txa26.png";
+import jcoteck from "@/assets/images/jcoteck.png";
+import skillManAuth_api from "@/assets/images/skillManAuth_api.png";
+import cirkuit_hub from "@/assets/images/cirkuit_hub.png";
+import portfolio from "@/assets/images/portfolio.png";
 
 const projects = [
   {
-    title: "E-Commerce Platform",
-    description:
-      "A full-featured e-commerce solution with real-time inventory management, secure payments, and an admin dashboard. Built for scalability and performance.",
-    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&q=80",
+    title: "Jcoteck Company Website",
+    description: "A full featured company website for jcoteck. Incorporate ecommerce and bloging platform with real-time inventory management, secure payments, and an admin dashboard. Built for scalability and performance.",
+    image: jcoteck,
     technologies: ["React", "FastAPI", "PostgreSQL", "Stripe", "Redis"],
     features: ["Real-time inventory", "Payment processing", "Admin dashboard", "Analytics"],
     role: "Lead Developer",
-    liveUrl: "#",
-    githubUrl: "#",
+    liveUrl: "https://jcoteck.com.ng/",
+    githubUrl: "https://github.com/joshuasco/jcoteck",
     category: "SaaS",
   },
   {
-    title: "Task Management API",
+    title: "TXA26 Event Platform",
     description:
-      "RESTful API platform for team collaboration with real-time updates, role-based access control, and comprehensive documentation.",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
+      "RESTful API Authentication system for  Skillman platform with real-time updates, role-based access control, and comprehensive documentation.",
+    image: txa26,
     technologies: ["Django", "PostgreSQL", "Docker", "AWS", "Celery"],
-    features: ["REST API", "Real-time sync", "Role management", "Auto-scaling"],
-    role: "Full-Stack Developer",
-    liveUrl: "#",
-    githubUrl: "#",
-    category: "API Platform",
+    features: ["REST API", "Real-time sync", "product purchase", "Payment Integration"],
+    role: "Lead Developer",
+    liveUrl: "https://txa-26.vercel.app",
+    githubUrl: "https://github.com/Joshuasco/TXA-26.git",
+    category: "Event Platform",
   },
   {
-    title: "Analytics Dashboard",
+    title: "Circuit Hub Ecommerce Platform",
     description:
-      "Interactive business intelligence dashboard with customizable widgets, real-time data visualization, and automated reporting.",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
+      "A full featured ecommerce platform for circuit hub. Incorporate ecommerce and bloging platform with real-time inventory management and analytics, secure payments, and an admin dashboard with logistic and tracking functionality. Built for scalability and performance.",
+    image: cirkuit_hub,
+    technologies: ["FastAPI", "PostgreSQL", "JWT", "Redis", "Docker"],
+    features: ["Real-time inventory", "Analytics", "Ecommerce", "Admin dashboard"],
+    role: "Backend Developer",
+    liveUrl: "https://cirkuit-hub.lovable.app",
+    githubUrl: "https://github.com/joshuasco/circuit-hub",
+    category: "SaaS",
+  },
+  {
+    title: "JcoteckVTU",
+    description:
+      "A vitual top up platform for data, airtime and other uitility bill payments. Allows API integration for third party websites.  Integrates secure payments, and an admin dashboard",
+    image: vtu,
     technologies: ["React", "TailwindCSS", "FastAPI", "Chart.js", "Firebase"],
     features: ["Data visualization", "Custom widgets", "Export reports", "Real-time updates"],
     role: "Frontend Lead",
-    liveUrl: "#",
-    githubUrl: "#",
+    liveUrl: "https://jcoteck-vtu.vercel.app/",
+    githubUrl: "https://github.com/joshuasco/jcoteck-vtu",
     category: "Dashboard",
   },
   {
-    title: "Authentication System",
+    title: "SkillMan Authentication API",
     description:
       "Secure, scalable authentication service supporting OAuth, 2FA, and session management with comprehensive audit logging.",
-    image: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=800&q=80",
+    image: skillManAuth_api,
     technologies: ["FastAPI", "PostgreSQL", "JWT", "Redis", "Docker"],
     features: ["OAuth 2.0", "Two-factor auth", "Session management", "Audit logs"],
     role: "Backend Developer",
+    liveUrl: "https://skileman.onrender.com",
+    githubUrl: "https://github.com/joshuasco/skileman",
+    category: "API Platform",
+  },
+  {
+    title: "Portfolio",
+    description:
+      "Personal portfolio website that showcases my skills, projects, and contact details to prospective clients and employers.",
+    image: portfolio,
+    technologies: ["React", "emailjs", "TailwindCSS"],
+    features: ["Responsive Design", "EmailJS Integration", "Interactive UI"],
+    role: "Frontend Developer",
     liveUrl: "#",
-    githubUrl: "#",
-    category: "Security",
+    githubUrl: "https://github.com/joshuasco/joshua-odigbo-Portfolio",
+    category: "Portfolio",
   },
 ];
 
@@ -65,7 +103,7 @@ export const Projects = () => {
             Projects That <span className="text-gradient">Define</span> My Craft
           </h2>
           <p className="text-muted-foreground">
-            A selection of projects showcasing my expertise in building scalable, 
+            A selection of projects showcasing my expertise in building scalable,
             user-focused applications
           </p>
         </div>
@@ -149,12 +187,39 @@ export const Projects = () => {
                   <span className="text-xs text-muted-foreground">
                     Role: <span className="text-foreground">{project.role}</span>
                   </span>
-                  <Button variant="ghost" size="sm" className="group/btn" asChild>
-                    <a href={project.liveUrl}>
-                      View Project
-                      <ArrowUpRight className="ml-1 w-4 h-4 transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
-                    </a>
-                  </Button>
+                  <Drawer>
+                    <DrawerTrigger asChild>
+                      <Button variant="ghost" size="sm" className="group/btn">
+                        View Project
+                        <ArrowUpRight className="ml-1 w-4 h-4 transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
+                      </Button>
+                    </DrawerTrigger>
+                    {/* Extendable drawer from bottom via drag mechanism natively supported by vaul */}
+                    <DrawerContent className="h-[85vh] flex flex-col">
+                      <div className="mx-auto w-full max-w-7xl h-full flex flex-col pt-2 pb-6 px-4">
+                        <DrawerHeader className="flex flex-row items-center justify-between border-b pb-4 shrink-0">
+                          <DrawerTitle className="text-xl font-heading text-left">
+                            {project.title} Preview
+                          </DrawerTitle>
+                          <DrawerClose asChild>
+                            <Button variant="ghost" size="icon" className="h-8 w-8 rounded-full">
+                              <X className="h-5 w-5" />
+                              <span className="sr-only">Close</span>
+                            </Button>
+                          </DrawerClose>
+                        </DrawerHeader>
+                        <div className="flex-1 w-full bg-secondary/20 overflow-hidden relative rounded-b-md mt-4 shadow-sm border">
+                          <iframe
+                            src={project.liveUrl === "#" ? "about:blank" : project.liveUrl}
+                            className="w-full h-full border-0 absolute inset-0 bg-white"
+                            title={project.title}
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowFullScreen
+                          />
+                        </div>
+                      </div>
+                    </DrawerContent>
+                  </Drawer>
                 </div>
               </div>
             </article>
@@ -165,7 +230,7 @@ export const Projects = () => {
         <div className="text-center mt-12">
           <Button variant="heroOutline" size="lg" asChild>
             <a href="https://github.com" target="_blank" rel="noopener noreferrer">
-              View All Projects on GitHub
+              View All Projects
               <Github className="ml-2" size={18} />
             </a>
           </Button>

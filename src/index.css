@@ -133,7 +133,7 @@
 
 @layer components {
   .section-container {
-    @apply container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl;
+    @apply w-[90%] max-w-[1440px] mx-auto;
   }
 
   .section-padding {
