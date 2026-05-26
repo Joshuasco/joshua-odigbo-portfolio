@@ -1,4 +1,5 @@
 import { ExternalLink, Github, ArrowUpRight, X } from "lucide-react";
+import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import {
   Drawer,
@@ -9,17 +10,40 @@ import {
   DrawerTrigger,
 } from "@/components/ui/drawer";
 import vtu from "@/assets/images/vtu.png";
+import vtu_about from "@/assets/images/vtu_about.png";
+import vtu_dashboard from "@/assets/images/vtu_dashboard.png";
 import txa26 from "@/assets/images/txa26.png";
+import txa_ticket from "@/assets/images/txa_ticket.png";
+import txa_swag from "@/assets/images/txa_swag.png";
 import jcoteck from "@/assets/images/jcoteck.png";
+import jcoteck_service_sectors from "@/assets/images/jcoteck_service_sectors.png";
+import jcoteck_dev_cycle from "@/assets/images/jcoteck_dev_cycle.png";
 import skillManAuth_api from "@/assets/images/skillManAuth_api.png";
+import circuit_dashboard from "@/assets/images/circuit_dashboard.png"
 import cirkuit_hub from "@/assets/images/cirkuit_hub.png";
 import portfolio from "@/assets/images/portfolio.png";
+import portfolio_skill from "@/assets/images/portfolio_skill.png";
+import depalscare_home from "@/assets/images/depalscare_home.png";
+import depalscare_dashboard from "@/assets/images/depalscare_dashboard.png";
+import depalscare_analytics from "@/assets/images/depalscare_analytics.png";
 
 const projects = [
+    {
+    title: "Depals Care Foundation",
+    description: "A Commuinity management and analytic platform for participants(elders and aged) and care givers(volunteers) with admin role.",
+    images: [depalscare_home, depalscare_dashboard, depalscare_analytics],
+    technologies: ["Reactjs", "TailwindCSS", "FastAPI", "PostgreSQL", "AWS"],
+    features: ["Volunteer-Participant Management", "Professional Dashboard", "Report & Analytics", "User Management", "Chat & Call Integration"],
+    role: "Full-Stack Developer",
+    liveUrl: "https://depalscare.vercel.app/",
+    githubUrl: "https://github.com/joshuasco/demo-design-showcase",
+    category: "Community Management System",
+  },
   {
     title: "Jcoteck Company Website",
-    description: "A full featured company website for jcoteck. Incorporate ecommerce and bloging platform with real-time inventory management, secure payments, and an admin dashboard. Built for scalability and performance.",
-    image: jcoteck,
+    description:
+      "A full featured company website for jcoteck. Incorporate ecommerce and bloging platform with real-time inventory management, secure payments, and an admin dashboard. Built for scalability and performance.",
+    images: [jcoteck, jcoteck_service_sectors, jcoteck_dev_cycle],
     technologies: ["HTML5", "CSS3", "JQuery", "Ajax", "Django", "PostgreSQL", "PayStack", "AWS"],
     features: ["Real-time inventory", "Payment processing", "Ecommerce", "Blogging", "Admin dashboard", "Analytics"],
     role: "Lead Developer",
@@ -29,8 +53,9 @@ const projects = [
   },
   {
     title: "TXA26 Event Platform",
-    description: "An annual event that empowers young African tech talent by fostering knowledge exchange and capacity building in Africa By connecting professionals and novices from across the continent, TechX Africa strengthens the resilience and growth of Africa's entire tech landscape",
-    image: txa26,
+    description:
+      "An annual event that empowers young African tech talent by fostering knowledge exchange and capacity building in Africa By connecting professionals and novices from across the continent, TechX Africa strengthens the resilience and growth of Africa's entire tech landscape",
+    images: [txa26, txa_ticket,txa_swag],
     technologies: ["React", "TailwindCSS", "Framer Motion", "FastAPI", "FireBase", "Flutterwave"],
     features: ["REST API", "Real-time sync", "Product Purchase", "Payment Integration"],
     role: "Lead Developer",
@@ -42,7 +67,7 @@ const projects = [
     title: "Circuit Hub Ecommerce Platform",
     description:
       "A full featured ecommerce platform for circuit hub. Incorporate ecommerce and bloging platform with real-time inventory management and analytics, secure payments, and an admin dashboard with logistic and tracking functionality. Built for scalability and performance.",
-    image: cirkuit_hub,
+    images: [cirkuit_hub, circuit_dashboard],
     technologies: ["React", "TailwindCSS", "Supperbase", "JWT", "Redis"],
     features: ["Real-time Inventory", "Analytics", "Ecommerce", "Blogging", "Admin Dashboard"],
     role: "Backend Developer",
@@ -54,7 +79,7 @@ const projects = [
     title: "JcoteckVTU",
     description:
       "A vitual top up platform for data, airtime and other uitility bill payments. Allows API integration for third party websites.  Integrates secure payments, and an admin dashboard",
-    image: vtu,
+    images: [vtu, vtu_about, vtu_dashboard],
     technologies: ["React", "TailwindCSS", "FastAPI", "Chart.js", "Firebase"],
     features: ["Data visualization", "Payment Integration", "Export reports", "Real-time updates"],
     role: "Full-Stack Developer",
@@ -66,7 +91,7 @@ const projects = [
     title: "SkillMan",
     description:
       "Secure, scalable authentication service supporting OAuth, 2FA, and session management with comprehensive audit logging.",
-    image: skillManAuth_api,
+    images: [skillManAuth_api],
     technologies: ["FastAPI", "PostgreSQL", "JWT", "Redis", "Docker"],
     features: ["OAuth 2.0", "Two-factor auth", "Session management", "Audit logs"],
     role: "Backend Developer",
@@ -78,7 +103,7 @@ const projects = [
     title: "Portfolio",
     description:
       "Personal portfolio website that showcases my skills, projects, and contact details to prospective clients and employers.",
-    image: portfolio,
+    images: [portfolio, portfolio_skill],
     technologies: ["React", "emailjs", "TailwindCSS", "shadcn/ui"],
     features: ["Responsive Design", "EmailJS Integration", "Interactive UI"],
     role: "Frontend Developer",
@@ -87,6 +112,127 @@ const projects = [
     category: "Portfolio",
   },
 ];
+
+const ProjectImageCarousel = ({
+  images: rawImages,
+  title,
+  category,
+}: {
+  images?: string | string[];
+  title: string;
+  category: string;
+}) => {
+  const images = Array.isArray(rawImages)
+    ? rawImages
+    : typeof rawImages === "string"
+    ? [rawImages]
+    : [];
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [disableTransition, setDisableTransition] = useState(false);
+  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
+
+  // If there are multiple images, append the first one at the end for seamless looping
+  const carouselImages = images.length > 1 ? [...images, images[0]] : images;
+
+  const startAutoScroll = () => {
+    if (images.length <= 1) return;
+    intervalRef.current = setInterval(() => {
+      setCurrentIndex((prev) => prev + 1);
+    }, 3000);
+  };
+
+  const stopAutoScroll = () => {
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current);
+      intervalRef.current = null;
+    }
+  };
+
+  useEffect(() => {
+    startAutoScroll();
+    return () => stopAutoScroll();
+  }, [images.length]);
+
+  useEffect(() => {
+    if (disableTransition) {
+      const raf = requestAnimationFrame(() => {
+        setDisableTransition(false);
+      });
+      return () => cancelAnimationFrame(raf);
+    }
+  }, [disableTransition]);
+
+  const handleTransitionEnd = () => {
+    if (images.length > 1 && currentIndex === carouselImages.length - 1) {
+      setDisableTransition(true);
+      setCurrentIndex(0);
+    }
+  };
+
+  const goTo = (index: number) => {
+    setDisableTransition(false);
+    setCurrentIndex(index);
+  };
+
+  return (
+    <div
+      className="relative h-56 overflow-hidden"
+      onMouseEnter={stopAutoScroll}
+      onMouseLeave={startAutoScroll}
+    >
+      {/* Horizontally sliding container */}
+      <div
+        className={`flex w-full h-full ${disableTransition ? "" : "transition-transform duration-500 ease-in-out"}`}
+        style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+        onTransitionEnd={handleTransitionEnd}
+      >
+        {carouselImages.map((src, i) => (
+          <div key={i} className="w-full h-full shrink-0">
+            <img
+              src={src}
+              alt={`${title} screenshot ${i + 1}`}
+              className="w-full h-full object-cover"
+            />
+          </div>
+        ))}
+      </div>
+
+      {/* Bottom-to-top fade overlay */}
+      <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent pointer-events-none" />
+
+      {/* Category badge */}
+      <span className="absolute top-4 left-4 px-3 py-1 rounded-full bg-primary/10 backdrop-blur-sm border border-primary/20 text-xs font-medium text-primary z-10">
+        {category}
+      </span>
+
+      {/* Image counter badge (only for multiple images) */}
+      {images.length > 1 && (
+        <span className="absolute top-4 right-4 px-2 py-0.5 rounded-full bg-black/40 backdrop-blur-sm text-xs text-white z-10">
+          {(currentIndex % images.length) + 1} / {images.length}
+        </span>
+      )}
+
+      {/* Dot navigation */}
+      {images.length > 1 && (
+        <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5 z-10">
+          {images.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => goTo(i)}
+              aria-label={`Go to image ${i + 1}`}
+              className={`h-1.5 rounded-full transition-all duration-300 ${
+                i === (currentIndex % images.length)
+                  ? "w-5 bg-primary"
+                  : "w-1.5 bg-white/50 hover:bg-white/80"
+              }`}
+            />
+          ))}
+        </div>
+      )}
+    </div>
+  );
+};
 
 export const Projects = () => {
   return (
@@ -108,23 +254,17 @@ export const Projects = () => {
 
         {/* Projects Grid */}
         <div className="grid lg:grid-cols-2 gap-8">
-          {projects.map((project, index) => (
+          {projects.map((project) => (
             <article
               key={project.title}
               className="group rounded-2xl bg-card border border-border overflow-hidden hover:border-primary/30 transition-all duration-500 hover:shadow-card"
             >
-              {/* Image */}
-              <div className="relative h-56 overflow-hidden">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent" />
-                <span className="absolute top-4 left-4 px-3 py-1 rounded-full bg-primary/10 backdrop-blur-sm border border-primary/20 text-xs font-medium text-primary">
-                  {project.category}
-                </span>
-              </div>
+              {/* Image Carousel */}
+              <ProjectImageCarousel
+                images={project.images}
+                title={project.title}
+                category={project.category}
+              />
 
               {/* Content */}
               <div className="p-6">
@@ -180,7 +320,7 @@ export const Projects = () => {
                   ))}
                 </div>
 
-                {/* Role */}
+                {/* Role + View Project */}
                 <div className="flex items-center justify-between pt-4 border-t border-border">
                   <span className="text-xs text-muted-foreground">
                     Role: <span className="text-foreground">{project.role}</span>
