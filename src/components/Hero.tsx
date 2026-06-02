@@ -86,8 +86,9 @@ export const Hero = () => {
                 <Mail size={22} />
               </a>
               <a
-                href="link to my resume"
+                href="https://drive.google.com/file/d/1XYdKseP_Bh0IJ19HWJLXZIk7JWjkxsFi/view?usp=drivesdk"
                 className="p-3 rounded-xl bg-secondary hover:bg-secondary/80 text-muted-foreground hover:text-foreground transition-all duration-300 hover:scale-110"
+              title="Download Resume"
               >
                 <Download size={22} />
               </a>
