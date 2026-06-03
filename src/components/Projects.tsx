@@ -71,7 +71,7 @@ const projects = [
     technologies: ["React", "TailwindCSS", "Supperbase", "JWT", "Redis"],
     features: ["Real-time Inventory", "Analytics", "Ecommerce", "Blogging", "Admin Dashboard"],
     role: "Backend Developer",
-    liveUrl: "https://cirkuit-hub.lovable.app",
+    liveUrl: "https://circuithub-orcin.vercel.app/",
     githubUrl: "https://github.com/joshuasco/circuit-hub",
     category: "SaaS",
   },
