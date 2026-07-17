@@ -35,7 +35,7 @@ const projects = [
     technologies: ["Reactjs", "TailwindCSS", "FastAPI", "PostgreSQL", "AWS"],
     features: ["Volunteer-Participant Management", "Professional Dashboard", "Report & Analytics", "User Management", "Chat & Call Integration"],
     role: "Full-Stack Developer",
-    liveUrl: "https://depalscare.vercel.app/",
+    liveUrl: "https://depalskare.vercel.app/",
     githubUrl: "https://github.com/joshuasco/demo-design-showcase",
     category: "Community Management System",
   },
