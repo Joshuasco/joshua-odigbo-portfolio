@@ -21,12 +21,14 @@ export const portfolioKnowledgeBase: KnowledgeChunk[] = [
     id: "identity-summary",
     category: "Identity",
     title: "Who is Joshua Odigbo",
-    content: `Joshua Odigbo is a Full-Stack Software Engineer with over 5 years of hands-on professional experience designing, building, and scaling modern web applications. He is based remotely and is currently open to new opportunities — both full-time employment and freelance/contract work.
+    content: `Joshua Odigbo is a Full-Stack Software Engineer with over 5 years of hands-on professional experience engineering scalable, high-performance web systems. He is based remotely and is currently open to new opportunities — both full-time employment and freelance/contract work.
 
-He specializes in end-to-end product development, meaning he can take a project from concept through UI design, frontend implementation, backend API development, database architecture, deployment, and ongoing maintenance. He has the rare ability to lead as either a Frontend Engineer or a Backend Engineer and is equally comfortable in both disciplines.
+Driven by strong critical thinking and a natural affinity for mathematical and logical problem-solving, Joshua's primary area of expertise and passion is **backend engineering**. He designs robust server-side systems, architects high-efficiency APIs (FastAPI, Django, Go), optimizes data pipelines, and builds infrastructure that scales. When evaluating dual-role opportunities, he prioritizes positions where backend engineering is the primary responsibility, while retaining full-stack delivery capability.
 
-Joshua is passionate about writing clean, maintainable code, solving real-world problems through technology, and delivering products that genuinely help users. He has collaborated with startups, agencies, and enterprise-level teams across multiple industries including fintech, healthcare, e-commerce, and events.`,
-    keywords: ["who", "joshua", "odigbo", "about", "summary", "introduction", "overview", "profile", "developer", "engineer", "full stack", "fullstack"],
+On the frontend, he complements his backend strength with clean, responsive UIs using React and Tailwind CSS — giving him the ability to own complete end-to-end products. He has collaborated with startups, agencies, and enterprise teams across fintech, healthcare, e-commerce, and events.
+
+**Role preference when a choice must be made: Backend Engineer first, Full-Stack Engineer second.**`,
+    keywords: ["who", "joshua", "odigbo", "about", "summary", "introduction", "overview", "profile", "developer", "engineer", "full stack", "fullstack", "backend", "focus", "preference", "role"],
   },
 
   // ─────────────────────────────────────────────
@@ -527,29 +529,31 @@ Beyond technical expertise, Joshua brings strong professional soft skills:
   {
     id: "qa-frontend-vs-backend",
     category: "FAQ",
-    title: "Can Joshua work as Frontend or Backend specialist?",
-    content: `**Q: Can Joshua specialize as either a Frontend or Backend Engineer?**
+    title: "Should we hire Joshua as Backend or Full-Stack Engineer?",
+    content: `**Q: If we have both a Backend Engineer role and a Full-Stack Engineer role, which would Joshua prefer?**
 
-Yes, absolutely. Joshua is a true Full-Stack Engineer with deep expertise in both disciplines. Here's how he can contribute in each specialization:
+**Short answer: Backend Engineer is his first choice.**
 
-**As a Frontend Engineer:**
-- Leads React.js component architecture and state management strategy
-- Builds pixel-perfect, accessible, performant user interfaces
-- Implements complex animations, real-time UX updates, and data visualizations
-- Sets up frontend CI/CD pipelines, testing, and performance monitoring
-- Works fluently with design systems and Figma handoffs
-- Primary stack: React, TypeScript, TailwindCSS, Next.js, TanStack Query
+Joshua is a capable full-stack developer, but his deepest passion and strongest expertise lives on the server side. He is driven by mathematical thinking, system design, and the challenge of building APIs and infrastructure that perform at scale. Backend engineering is where he adds the most value and finds the most professional satisfaction.
 
-**As a Backend Engineer:**
-- Architects and implements REST APIs and microservices
-- Designs database schemas and optimizes query performance
-- Implements authentication, authorization, and security best practices
-- Manages cloud infrastructure and deployment pipelines
-- Handles third-party integrations (payment gateways, telecom APIs, etc.)
-- Primary stack: Python, FastAPI, Django, PostgreSQL, Redis, Docker, AWS
+**If you're hiring a Backend Engineer:**
+- He is an excellent fit. He will architect robust APIs, design efficient data models, implement security, and build systems that scale.
+- Stack: Python, FastAPI, Django, Go, PostgreSQL, Redis, Docker, AWS
+- He has led backend architecture on fintech (JcoteckVTU), e-commerce (Circuit Hub), event platforms (TXA26), and auth microservices (SkillMan).
 
-His ability to bridge both worlds is a unique advantage — even when hired as a specialist, his cross-domain understanding leads to better API contracts, faster debugging, and stronger architectural decisions.`,
-    keywords: ["frontend", "backend", "specialist", "specialize", "which", "focus", "major", "role", "both", "full stack"],
+**If you're hiring a Full-Stack Engineer:**
+- Also a strong fit, especially if the role is backend-weighted or expects him to drive the API layer while contributing on the frontend.
+- He will own the full product: FastAPI/Django backend + React/Tailwind frontend, deployed on AWS/Render.
+- He prefers this over a pure frontend role.
+
+**What he avoids:** Pure frontend-only roles where backend involvement is minimal. He can do the work, but it doesn't align with his long-term growth direction.
+
+**Summary of role preference:**
+1. 🥇 Backend Engineer
+2. 🥈 Full-Stack Engineer (backend-weighted)
+3. 🥉 Full-Stack Engineer (balanced)
+4. ❌ Pure Frontend only (not preferred)`,
+    keywords: ["frontend", "backend", "specialist", "specialize", "which", "focus", "major", "role", "both", "full stack", "choose", "prefer", "preference", "between", "versus", "vs", "or", "either"],
   },
   {
     id: "qa-why-hire",
@@ -601,12 +605,12 @@ Joshua values total compensation including base salary, growth opportunities, te
 // Suggested questions to show in the chatbot UI
 // ─────────────────────────────────────────────────────────────
 export const suggestedQuestions = [
-  "What are Joshua's core skills?",
+  "What's his preferred role — backend or full-stack?",
+  "What are Joshua's backend skills?",
   "Tell me about his experience",
   "What projects has he built?",
-  "Can he specialize as a frontend engineer?",
-  "What's his backend tech stack?",
+  "What's his complete tech stack?",
   "Is he available for hire?",
-  "What's his educational background?",
+  "Why should we hire Joshua?",
   "How can I contact Joshua?",
 ];
