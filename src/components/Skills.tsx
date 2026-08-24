@@ -19,7 +19,7 @@ const skillCategories = [
       { name: "Django", level: 90 },
       { name: "Python", level: 93 },
       { name: "REST APIs", level: 95 },
-      { name: "Node.js", level: 75 },
+      { name: "Golang", level: 75},
     ],
     color: "from-green-500 to-emerald-500",
   },

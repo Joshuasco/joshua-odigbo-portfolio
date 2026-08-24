@@ -5,6 +5,7 @@ import { Skills } from "@/components/Skills";
 import { Projects } from "@/components/Projects";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
+import { ChatBot } from "@/components/ChatBot";
 
 const Index = () => {
   return (
@@ -18,6 +19,8 @@ const Index = () => {
         <Contact />
       </main>
       <Footer />
+      {/* Floating AI Chatbot — always on top of all content */}
+      <ChatBot />
     </div>
   );
 };

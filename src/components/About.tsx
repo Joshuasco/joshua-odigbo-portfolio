@@ -1,66 +1,84 @@
-import { Code2, Users, Lightbulb, Rocket } from "lucide-react";
+import { Server, Layers, Users, Zap } from "lucide-react";
 
 const highlights = [
   {
-    icon: Code2,
+    icon: Server,
+    title: "Backend-First Engineer",
+    description:
+      "Architecting robust APIs, high-efficiency data pipelines, and scalable server-side systems.",
+  },
+  {
+    icon: Layers,
+    title: "Full-Stack Capable",
+    description:
+      "End-to-end delivery — clean React UIs backed by powerful server-side logic.",
+  },
+  {
+    icon: Zap,
     title: "5+ Years Experience",
-    description: "Building scalable web applications across diverse industries",
+    description:
+      "Proven across startups, agencies, and collaborative teams in diverse industries.",
   },
   {
     icon: Users,
-    title: "Team Collaboration",
-    description: "Working with startups, agencies, and enterprise teams",
-  },
-  {
-    icon: Lightbulb,
-    title: "Problem Solver",
-    description: "Turning complex challenges into elegant solutions",
-  },
-  {
-    icon: Rocket,
-    title: "End-to-End Delivery",
-    description: "From concept to deployment and beyond",
+    title: "Analytical Problem-Solver",
+    description:
+      "Translating complex mathematical and logical challenges into high-impact digital solutions.",
   },
 ];
+
+const backendSkills = ["FastAPI", "Django", "Go", "REST APIs", "GraphQL", "PostgreSQL", "Redis", "Docker"];
+const frontendSkills = ["React", "TypeScript", "Tailwind CSS", "Next.js"];
 
 export const About = () => {
   return (
     <section id="about" className="section-padding relative">
       <div className="section-container">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Content */}
-          <div>
-            <span className="text-primary font-medium text-sm tracking-wider uppercase mb-4 block">
-              About Me
-            </span>
-            <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
-              Passionate about building{" "}
-              <span className="text-gradient">exceptional</span> digital experiences
-            </h2>
+       
+        {/* Main Grid */}
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+            
+          {/* ── Left column: Bio ── */}
+          <div className="space-y-5">
+                {/* Header */}
+            <div className="mb-10">
+              <span className="text-primary font-medium text-sm tracking-wider uppercase mb-3 block">
+                About Me
+              </span>
+              <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl font-bold">
+                Engineered for{" "}
+                <span className="text-gradient">scale</span>,{" "}
+                built for{" "}
+                <span className="text-gradient">impact</span>
+              </h2>
+            </div>
             <div className="space-y-4 text-muted-foreground leading-relaxed">
               <p>
-                I'm Joshua Odigbo, an experienced full-stack developer with over 5 years 
-                of hands-on experience building scalable, high-performance web applications. 
-                My journey into development started with a curiosity for how things work on 
-                the web, which quickly evolved into a passion for creating impactful digital solutions.
+                I'm Joshua Odigbo a full-stack
+                developer with over 5 years of hands-on
+                experience engineering scalable, high-performance web systems. My journey began with a
+                curiosity for how the web works, quickly evolving into a passion for building impactful
+                digital products that solve real problems.
               </p>
               <p>
-                I specialize in both frontend and backend development, delivering clean, 
-                efficient code and user-focused products. Whether it's crafting pixel-perfect 
-                interfaces with React and TailwindCSS or building robust APIs with FastAPI 
-                and Django, I bring the same level of dedication and attention to detail.
+                Driven by strong critical thinking and a natural affinity for mathematical logic,{" "}
+                I find myself most drawn to backend architecture.
+                I design robust server-side systems, architect high-efficiency APIs with FastAPI, Django,
+                and Go, and optimize data flow for performance at scale. When evaluating opportunities,
+                I prioritize roles where I can drive backend engineering first while retaining full-stack
+                capabilities.
               </p>
               <p>
-                Beyond code, I enjoy solving real-world problems through technology. 
-                I've had the privilege of collaborating with teams, startups, and clients 
-                across various industries, always striving to exceed expectations and 
-                deliver value.
+                On the frontend, I complement strong server-side logic with clean, responsive interfaces
+                using React and Tailwind CSS — delivering complete, end-to-end applications as polished
+                on the surface as they are solid underneath. Across startups, clients, and collaborative
+                teams, I apply analytical rigor to translate complex logic into solutions that genuinely scale.
               </p>
             </div>
           </div>
 
-          {/* Highlights Grid */}
-          <div className="grid sm:grid-cols-2 gap-4">
+          {/* ── Right column: Highlight Cards ── */}
+          <div className="grid sm:grid-cols-2 gap-4 lg:pt-32">
             {highlights.map((item, index) => (
               <div
                 key={item.title}
@@ -70,14 +88,24 @@ export const About = () => {
                 <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
                   <item.icon className="w-6 h-6 text-primary" />
                 </div>
-                <h3 className="font-heading font-semibold text-lg mb-2">
+                <h3 className="font-heading font-semibold text-base mb-2">
                   {item.title}
                 </h3>
-                <p className="text-sm text-muted-foreground">
+                <p className="text-sm text-muted-foreground leading-relaxed">
                   {item.description}
                 </p>
               </div>
             ))}
+
+            {/* Accent quote card */}
+            <div className="sm:col-span-2 p-5 rounded-2xl border border-primary/20 bg-primary/5 relative overflow-hidden">
+              <div className="absolute top-0 left-0 w-1 h-full bg-gradient-primary rounded-l-2xl" />
+              <p className="pl-4 text-sm text-foreground/75 leading-relaxed italic">
+                "I thrive where complex logic meets meaningful scale - engineering backend systems that are
+                performant, maintainable, and built to grow."
+              </p>
+              <p className="pl-4 mt-2 text-xs text-primary font-semibold">— Joshua Odigbo</p>
+            </div>
           </div>
         </div>
       </div>
