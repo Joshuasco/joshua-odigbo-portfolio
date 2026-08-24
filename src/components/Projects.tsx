@@ -142,7 +142,7 @@ const ProjectImageCarousel = ({
     }, 3000);
   };
 
-  const stopAutoScroll = () => {
+  const stopAutoScroll = () => {                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
     if (intervalRef.current) {
       clearInterval(intervalRef.current);
       intervalRef.current = null;
