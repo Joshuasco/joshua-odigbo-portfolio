@@ -54,7 +54,7 @@ export const About = () => {
             </div>
             <div className="space-y-4 text-muted-foreground leading-relaxed">
               <p>
-                I'm Joshua Odigbo a full-stack
+                I'm Joshua Odigbo a backend focused full-stack
                 developer with over 5 years of hands-on
                 experience engineering scalable, high-performance web systems. My journey began with a
                 curiosity for how the web works, quickly evolving into a passion for building impactful
