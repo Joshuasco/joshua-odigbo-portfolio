@@ -36,7 +36,7 @@ export const Hero = () => {
 
             {/* Subheadline */}
             <p className="text-xl sm:text-2xl md:text-3xl text-muted-foreground font-heading font-medium mb-4">
-              Full-Stack Developer
+              Full-Stack Developer (Backend Focused)
             </p>
 
             {/* Description */}
