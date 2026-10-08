@@ -139,7 +139,7 @@ export const ChatBot = () => {
       const history = messages.filter((m) => !m.isStreaming) as ChatMessage[];
 
       setMessages((prev) => [...prev, userMsg]);
-      setInput("");-
+      setInput("");
       setIsLoading(true);
 
       const streamId = nextId();
@@ -283,7 +283,7 @@ export const ChatBot = () => {
       {isOpen && (
         <div
           id="chatbot-window"
-          className={`fixed z-50 bottom-0 right-0 sm:bottom-6 sm:right-6 ${isEntering ? "cb-enter" : ""}`}
+          className={`fixed z-50 bottom-0 t-50 right-0 sm:bottom-6 sm:right-6 ${isEntering ? "cb-enter" : ""}`}
           style={{ width: "min(420px, 100vw)", height: isMinimized ? "auto" : "min(600px, 100dvh)" }}
         >
           <div

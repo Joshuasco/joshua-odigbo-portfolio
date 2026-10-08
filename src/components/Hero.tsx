@@ -23,10 +23,6 @@ export const Hero = () => {
       <div className="section-container relative z-10  w-full px-6 lg:px-6 pb-20">
         <div className="flex flex-col-reverse lg:flex-row items-center justify-between gap-12 lg:gap-4 pt-10">
           <div className="w-full lg:w-full flex flex-col items-center lg:items-start text-center lg:text-left stagger-children">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border bg-secondary/50 text-sm text-muted-foreground mb-8">
-              <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-              Available for opportunities
-            </div>
 
             {/* Main headline */}
             <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6">
